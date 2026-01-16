@@ -17,14 +17,14 @@
     - Verify Node.js is installed.
     - Automatically install dependencies (`npm install`) if they are missing.
     - Detect and display your **exact IP Address** (e.g., `http://192.168.1.5:3000`).
-    - *(Optional)* Ask if you want to add **"Open with Antigravity (Debug)"** to your Windows Right-Click menu for quick launching.
+    - Provides a tip to use `install_context_menu.bat` for context menu management.
 
 2.  **Connect Your Phone**
     - Ensure your phone is on the **same Wi-Fi network** as your PC.
     - Open your mobile browser and enter the **URL shown in the terminal**.
 
 3.  **Launch Antigravity** (if not already running)
-    - If you installed the Right-Click menu, simply right-click any project folder and select **"Open with Antigravity (Debug)"**.
+    - **Recommended**: Run **`install_context_menu.bat`** and select **[1] Install**. Then, simply right-click any project folder and select **"Open with Antigravity (Debug)"**.
     - Otherwise, run manually: `antigravity . --remote-debugging-port=9000`
 
 ---
@@ -40,7 +40,7 @@
     - Verify Node.js is installed.
     - Automatically install dependencies.
     - Detect and display your **exact IP Address**.
-    - *(Linux only)* Offer to add a **Right-Click menu** entry for Nautilus/GNOME file manager.
+    - *(Linux only)* Provides a tip to use `./install_context_menu.sh` for Nautilus/GNOME context menu management.
     - *(macOS)* Provide a command to create a fast shell alias (`ag-debug`).
 
 2.  **Connect Your Phone**
@@ -81,7 +81,8 @@ Since macOS requires Automator for context menu entries, follow these steps manu
 - **Thought Expansion**: Tap on "Thinking..." or "Thought" blocks on your phone to remotely expand them in the desktop IDE.
 - **Smart Sync**: Bi-directional synchronization ensures your phone always shows the current Model and Mode selected on your desktop. Press Refresh to force a full sync.
 - **Premium Mobile UI**: A sleek, dark-themed interface optimized for touch interaction and long-form reading.
-- **Zero-Config**: The launch scripts handle the heavy lifting of environment setup and offer Right-Click integrations.
+- **Context Menu Management**: Dedicated scripts to **Install, Remove, or Backup** your Right-Click integrations on Windows and Linux.
+- **Zero-Config**: The launch scripts handle the heavy lifting of environment setup.
 
 ---
 

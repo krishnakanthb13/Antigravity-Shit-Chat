@@ -9,6 +9,8 @@ Antigravity-Shit-Chat/
 │   └── index.html      # Mobile-optimized web frontend
 ├── start_ag_phone_connect.bat  # Windows launcher
 ├── start_ag_phone_connect.sh   # Mac/Linux launcher
+├── install_context_menu.bat    # Windows context menu manager (Install/Remove/Backup)
+├── install_context_menu.sh     # Linux context menu manager (Install/Remove/Backup)
 ├── package.json        # Dependencies and metadata
 ├── LICENSE             # GPL v3 License
 └── README.md           # Quick-start guide
