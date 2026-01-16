@@ -646,22 +646,26 @@
         let lastHash = '';
         let currentMode = 'Fast';
 
-        // --- Init State Sync ---
+        // --- Sync State (Desktop is Always Priority) ---
         async function fetchAppState() {
             try {
                 const res = await fetch('/app-state');
                 const data = await res.json();
 
+                // Mode Sync (Fast/Planning) - Desktop is source of truth
                 if (data.mode && data.mode !== 'Unknown') {
                     modeText.textContent = data.mode;
                     modeBtn.classList.toggle('active', data.mode === 'Planning');
                     currentMode = data.mode;
                 }
 
+                // Model Sync - Desktop is source of truth
                 if (data.model && data.model !== 'Unknown') {
                     modelText.textContent = data.model;
                 }
-            } catch (e) { console.error('Sync failed', e); }
+
+                console.log('[SYNC] State refreshed from Desktop:', data);
+            } catch (e) { console.error('[SYNC] Failed to sync state', e); }
         }
 
         // --- Models ---
@@ -878,9 +882,9 @@
         sendBtn.addEventListener('click', sendMessage);
 
         refreshBtn.addEventListener('click', () => {
+            // Refresh both Chat and State (Mode/Model)
             loadSnapshot();
-            // Reset auto-refresh just in case it was paused by scrolling
-            //  userIsScrolling = false;
+            fetchAppState(); // PRIORITY: Sync from Desktop
         });
 
         messageInput.addEventListener('keydown', (e) => {
